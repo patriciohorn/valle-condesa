@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+
+import Logo from '../assets/logo.svg'
+---
+
+
+<nav class="py-8">
+  <!-- Left Side NavBar -->
+   <div class="flex justify-center items-end">
+     <div class="hidden lg:flex lg:justify-center lg:gap-x-12 lg:flex-1">
+       <a href="/macroproyecto" class="">MacroProyecto</a>
+       <a href="/habitacional" class="">Habitacional</a>
+       <a href="/comercial" class="">Comercial</a>
+     </div>
+   
+     <!-- Logo -->
+     <div class="">
+       <Image src={Logo} alt="logo Valle Condesa" inferSize/>
+     </div>
+     <!-- Right Side NavBar -->
+     <div class="hidden lg:flex lg:justify-center lg:gap-x-12 lg:flex-1">
+       <a href="/industrial" class="">Industrial</a>
+       <a href="/parque-condesa" class="">Parque Condesa</a>
+       <a href="/contacto" class="">Contacto</a>
+     </div>
+
+
+   </div>
+</nav>
