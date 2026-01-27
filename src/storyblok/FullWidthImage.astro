@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets"
+
+const {blok} = Astro.props
+---
+
+<section class="pt-12 md:pt-28">
+  <div class="container px-5 mx-auto">
+    <!-- Image -->
+    <div class="">
+      <Image src={blok.imagen.filename} alt={blok.image_alt || 'Valle Condesa'} inferSize/>
+    </div>
+    <!-- Caption -->
+     {blok.caption && 
+      <div class="mt-4 flex items-center gap-x-4">
+              <div class="border-l-2 inline-block text-accent h-3 lg:h-4"></div>
+              <figcaption class="text-sm text-neutral-600">
+                {blok.caption}
+              </figcaption>
+            </div>
+    }
+  </div>
+</section>
