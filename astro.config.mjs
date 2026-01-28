@@ -16,6 +16,7 @@ export default defineConfig({
         page: "storyblok/Page",
         hero: "storyblok/Hero",
         content_section: "storyblok/ContentSection",
+        banner: "storyblok/Banner",
       },
     }),
   ],
