@@ -17,6 +17,8 @@ export default defineConfig({
         hero: "storyblok/Hero",
         content_section: "storyblok/ContentSection",
         banner: "storyblok/Banner",
+        cards_section: "storyblok/CardsSection",
+        galeria: "storyblok/Galeria",
       },
     }),
   ],

@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import LogoFooter from '../assets/logo_footer.svg'
+import Banner from '../assets/banner.svg'
+const year = new Date().getFullYear();
+---
+
+<footer class="pt-10 lg:pt-14 bg-neutral-900">
+      <div class="max-w-9xl mx-auto px-5 lg:px-12">
+        <div class="mb-10 lg:mb-16">
+          <div class="flex gap-x-6 items-center">
+            <Image src={LogoFooter} alt="" inferSize class="w-18 h-18"/>
+            <h4 class="text-3xl lg:text-6xl text-white">
+              Muy Tuyo
+            </h4>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-6 gap-x-3.5 gap-y-6">
+          <address class="lg:col-span-4 flex flex-col gap-y-6">
+            <div>
+              <a
+                href="https://maps.app.goo.gl/P6gvSKSaCwa1h6iZ7"
+                class="text-lg text-white hover:text-accent transition-colors duration-200 ease-in not-italic inline-flex flex-col">
+                <span>Blvd. Rogelio Cantú Gómez 201</span>
+                <span>
+                  Colinas de San Jerónimo, 64630 Monterrey, N.L.
+                </span>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://maps.app.goo.gl/i6Aa77yuzcM79Wcs7"
+                class="text-lg text-white hover:text-accent transition-colors duration-200 ease-in not-italic inline-flex flex-col">
+                <span>Av. Ricardo Margain Zozaya 440</span>
+                <span>
+                  Valle del Campestre, 66265 San Pedro Garza García,
+                  N.L.
+                </span>
+              </a>
+            </div>
+          </address>
+          <div class="mb-0 lg:mb-16 flex flex-col">
+            <!-- {socialMediaas.map(({ label, url }) => (
+              <a
+                key={label}
+                target="_blank"
+                href={url}
+                class="text-white text-lg hover:text-accent transition-colors duration-300 ease-in w-fit">
+                {label}
+              </a>
+            ))} -->
+          </div>
+          <nav class="flex flex-col space-y-1 text-lg text-white">
+            <a
+              class=" hover:text-accent transition-colors duration-300 ease-in"
+              href="/habitacional">
+              Habitacional
+            </a>
+            <a
+              class=" hover:text-accent transition-colors duration-300 ease-in"
+              href="/comercial">
+              Comercial
+            </a>
+            <a
+              class=" hover:text-accent transition-colors duration-300 ease-in"
+              href="/industrial">
+              Industrial
+            </a>
+            <a
+              class=" hover:text-accent transition-colors duration-300 ease-in"
+              href="/perspectivas">
+              Perspectivas
+            </a>
+          </nav>
+        </div>  
+        {/* Copyright & Social Media */}
+        <div class="mt-12 flex gap-y-6 justify-end text-center lg:text-left">
+          <p class="text-neutral-500">
+            © {year} Terra Regia Desarrollos Inmobiliarios ®
+            <!-- <a
+              href="/aviso-de-privacidad"
+              class="hover:text-accent transition-colors duration-200 ease-in">
+              Aviso de Privacidad
+            </a> -->
+          </p>
+        </div>
+      </div>
+      <div class="mt-10 bg-white">
+        <Image src={Banner} alt="" class="w-full h-full"/>
+      </div>
+</footer>

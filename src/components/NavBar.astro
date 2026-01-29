@@ -1,29 +1,46 @@
 ---
 import { Image } from "astro:assets";
 
-import Logo from '../assets/logo.svg'
+import Logo from '../assets/logo-vc.svg'
+
+const leftNavItems = [
+  {label: 'Macroproyecto', ref: '/macroproyecto'}, 
+  {label: 'Habitacional', ref: '/habitacional'}, 
+  {label: 'Comercial', ref: '/comercial'}, 
+]
+const rightNavItems = [
+  {label: 'Industrial', ref: '/industrial'}, 
+  {label: 'Parque Condesa', ref: '/parque-condesa'}, 
+  {label: 'Contacto', ref: '/contacto'}, 
+]
 ---
 
 
-<nav class="py-8 absolute top-0 inset-x-0">
+<nav class="absolute top-0 left-0 w-full  z-10 py-8">
   <!-- Left Side NavBar -->
-   <div class="flex justify-center items-end">
-     <div class="hidden lg:flex lg:justify-center lg:gap-x-12 lg:flex-1">
-       <a href="/macroproyecto" class="">MacroProyecto</a>
-       <a href="/habitacional" class="">Habitacional</a>
-       <a href="/comercial" class="">Comercial</a>
-     </div>
+   <div class="flex items-center max-w-7xl mx-auto text-white">
+     <ul class="hidden lg:flex lg:justify-start lg:gap-x-8 lg:flex-1">
+      {leftNavItems.map((item) => (
+        <li>
+          <a href={item.ref} class="px-5 py-2 border border-transparent hover:border-white whitespace-nowrap transition-all duration-200 ease-out rounded-full">{item.label}</a>
+        </li>
+        
+      ))}
+     
+     </ul>
    
      <!-- Logo -->
-     <div class="">
-       <Image src={Logo} alt="logo Valle Condesa" class="h-18"/>
+     <div class="mx-10 shrink-0">
+       <Image src={Logo} alt="logo Valle Condesa" class="h-18 w-auto"/>
      </div>
      <!-- Right Side NavBar -->
-     <div class="hidden lg:flex lg:justify-center lg:gap-x-12 lg:flex-1">
-       <a href="/industrial" class="">Industrial</a>
-       <a href="/parque-condesa" class="">Parque Condesa</a>
-       <a href="/contacto" class="">Contacto</a>
-     </div>
+     <ul class="hidden lg:flex lg:justify-end lg:gap-x-8 lg:flex-1">
+       {rightNavItems.map((item) => (
+       <li>
+          <a href={item.ref} class="px-5 py-2 border border-transparent hover:border-white whitespace-nowrap transition-all duration-200 ease-out rounded-full">{item.label}</a>
+        </li>       
+      ))}
+     </ul>
 
 
    </div>

@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets"
+
+const {blok} = Astro.props
+
+---
+
+<section class="py-8 md:py-10">
+  <div class="max-w-7xl mx-auto px-5 md:px-0">
+   
+    {blok.cards.length > 0 && 
+     <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
+       {blok.cards.map((card : any) => (
+        // Card
+        <div class="flex flex-col gap-y-4">
+          <div class="aspect-4/3 ">
+            <Image src={card.image.filename} alt={card.image_alt_text || card.title || 'Valle Condesa'} inferSize class="w-full h-full object-cover"/>   
+          </div>
+          <h3 class="text-xl">{card.title}</h3>
+        </div>
+       ))}      
+    </div>
+    }
+  </div>
+</section>

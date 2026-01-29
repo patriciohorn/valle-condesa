@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+const {blok} = Astro.props
+---
+
+<section class="py-12 md:py-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex justify-between">
+      <div class="">
+        <Image src={blok.imagen_1.filename} alt={blok.imagen_1_alt_text || "Parque Condesa"} inferSize/>
+      </div>
+      <div class="">
+        <Image src={blok.imagen_2.filename} alt={blok.imagen_2_alt_text || "Persona en patineta"} inferSize/>
+      </div>      
+    </div>
+  </div>
+</section>
