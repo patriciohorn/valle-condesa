@@ -13,6 +13,8 @@ const rightNavItems = [
   {label: 'Parque Condesa', ref: '/gran-parque-condesa'}, 
   {label: 'Contacto', ref: '/contacto'}, 
 ]
+
+const pathname = Astro.url.pathname
 ---
 
 
@@ -22,7 +24,7 @@ const rightNavItems = [
      <ul class="hidden lg:flex lg:justify-start lg:gap-x-8 lg:flex-1">
       {leftNavItems.map((item) => (
         <li>
-          <a href={item.ref} class="px-5 py-2 border border-transparent hover:border-white whitespace-nowrap transition-all duration-200 ease-out rounded-full">{item.label}</a>
+          <a href={item.ref} class={`${pathname === item.ref ? 'border-white' : 'border-transparent'} px-5 py-2 border  hover:border-white whitespace-nowrap transition-all duration-200 ease-out rounded-full`}>{item.label}</a>
         </li>
         
       ))}
@@ -39,7 +41,7 @@ const rightNavItems = [
      <ul class="hidden lg:flex lg:justify-end lg:gap-x-8 lg:flex-1">
        {rightNavItems.map((item) => (
        <li>
-          <a href={item.ref} class="px-5 py-2 border border-transparent hover:border-white whitespace-nowrap transition-all duration-200 ease-out rounded-full">{item.label}</a>
+          <a href={item.ref} class={`${pathname === item.ref ? 'border-white' : 'border-transparent'} px-5 py-2 border  hover:border-white whitespace-nowrap transition-all duration-200 ease-out rounded-full`}>{item.label}</a>
         </li>       
       ))}
      </ul>
