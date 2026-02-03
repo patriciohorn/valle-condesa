@@ -1,0 +1,32 @@
+---
+import { storyblokEditable, renderRichText } from '@storyblok/astro';
+import { Image } from 'astro:assets';
+
+const {blok} = Astro.props
+const renderedRichText = renderRichText(blok.content)
+---
+
+
+<section class="pt-12 md:pt-28">
+  <div class="container px-5 md:px-0 mx-auto md:max-w-7xl"> 
+       
+    <div class="grid md:grid-cols-2 gap-x-20">
+     
+      <!-- Image -->
+      <div class="">
+        <Image src={blok.imagen.filename} alt={blok.image_alt || 'Valle Condesa'} inferSize class="w-full h-full object-cover"/>
+      </div>
+
+       <!-- Content -->
+      <div class="">
+        <h2 class="mb-4 md:mb-8 text-3xl md:text-[2.5rem]">{blok.headline}</h2>
+      <div class="text-base md:text-xl">
+      <Fragment set:html={renderedRichText} />
+      </div>
+      </div>
+    </div>
+    
+    
+    
+  </div>
+</section>

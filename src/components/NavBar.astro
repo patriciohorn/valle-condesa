@@ -10,7 +10,7 @@ const leftNavItems = [
 ]
 const rightNavItems = [
   {label: 'Industrial', ref: '/industrial'}, 
-  {label: 'Parque Condesa', ref: '/parque-condesa'}, 
+  {label: 'Parque Condesa', ref: '/gran-parque-condesa'}, 
   {label: 'Contacto', ref: '/contacto'}, 
 ]
 ---
@@ -31,7 +31,9 @@ const rightNavItems = [
    
      <!-- Logo -->
      <div class="mx-10 shrink-0">
-       <Image src={Logo} alt="logo Valle Condesa" class="h-18 w-auto"/>
+      <a href="/">
+        <Image src={Logo} alt="logo Valle Condesa" class="h-16 w-auto"/>
+      </a>
      </div>
      <!-- Right Side NavBar -->
      <ul class="hidden lg:flex lg:justify-end lg:gap-x-8 lg:flex-1">

@@ -8,7 +8,7 @@ const {blok} = Astro.props
   <div class="container px-5 md:px-0 mx-auto">
     <!-- Image -->
     <div class="">
-      <Image src={blok.imagen.filename} alt={blok.image_alt || 'Valle Condesa'} inferSize/>
+      <Image src={blok.imagen.filename} alt={blok.image_alt || 'Valle Condesa'} inferSize class="w-full h-full object-cover"/>
     </div>
     <!-- Caption -->
      {blok.caption && 
