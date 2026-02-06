@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets"
+import {ArrowRight} from "@lucide/astro"
 
 const {blok} = Astro.props
 
@@ -9,13 +10,16 @@ const {blok} = Astro.props
   <div class="max-w-7xl mx-auto px-5 md:px-0">
    
     {blok.cards.length > 0 && 
-     <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
+     <div class="grid md:grid-cols-3 gap-x-8 gap-y-10">
        {blok.cards.map((card : any) => (
         // Card
         <a href={card.link.cached_url} class="aspect-4/3 relative flex flex-col justify-end h-full overflow-hidden p-6 group rounded-sm">
           <Image src={card.image.filename} alt={card.image_alt_text || card.title || 'Valle Condesa'} inferSize class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300"/>   
           <div class="bg-linear-to-t from-black/80 via-black/20 to-transparent absolute inset-0"></div>
-          <h3 class="text-[2rem] text-white z-10">{card.title}</h3>
+          <div class="flex items-center justify-between text-white">
+            <h3 class="text-2xl md:text-[2rem] leading-[1.1] z-10 tracking tight font-medium">{card.title}</h3>
+            <ArrowRight size={24} class="flex h-6 w-6 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:translate-x-1"/>
+          </div>
         </a>
         
        ))}      
