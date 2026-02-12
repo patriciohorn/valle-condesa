@@ -1,0 +1,17 @@
+---
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+
+const {blok} = Astro.props
+---
+
+<section>
+  <div class="container md:max-w-7xl mx-auto">
+    <div class="grid grid-cols-2">
+      <div class="flex">
+        {blok.stats?.map((stat: any) => {
+        return <StoryblokComponent blok={stat}/>
+      })}
+      </div>
+    </div>
+  </div>
+</section>

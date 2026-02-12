@@ -1,0 +1,11 @@
+---
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+const {blok} = Astro.props
+---
+
+<div class="grid grid-cols-2">
+  <h3>Amenidades para todas las edades</h3>
+  {blok.amenities?.map((amenity : any) => {
+    return (<StoryblokComponent blok={amenity}/>)
+  })}
+</div>

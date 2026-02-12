@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets"
 import Banner from "./Banner.astro"
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
 const {blok} = Astro.props
 ---
@@ -14,14 +15,15 @@ const {blok} = Astro.props
   <!-- Bottom overlay -->
   <div class="bg-linear-to-t from-black/80 via-transparent to-transparent absolute bottom-0 inset-0 -z-10"></div>
   <div class="container mx-auto max-w-4xl md:max-w-7xl px-5 md:px-0 pb-16 md:pb-24">
-    <!-- Eyebrow -->
-    <!-- <div class="text-gray-300">
-      <span class="">Un macroproyecto de:</span>      
-       <a href="https://terraregia.com/" class="underline hover:text-white transition-colors duration-200 ease-out">Terra Regia</a>
-    </div> -->
-
-    <h1 class="mt-4 text-white text-5xl md:text-6xl font-bold">{blok.heading}</h1>
-    <div class="mt-5 md:mt-6 text-gray-100 text-lg md:text-2xl max-w-[28em]">{blok.subheading}</div>
+    <div class="md:max-w-1/2">
+      <span class="mb-4 inline-block text-sm md:text-sm text-white uppercase tracking-wide">{blok.eyebrow}</span>
+      <h1 class=" text-white text-5xl md:text-6xl font-semibold">{blok.heading}</h1>
+      <div class="mt-5 md:mt-6 text-gray-100 text-lg md:text-2xl">{blok.subheading}</div>
+    </div>
+    {blok.stats?.map((stat: any) => {
+        return <StoryblokComponent blok={stat}/>
+      })}
+    
   </div>
 
   </div>
