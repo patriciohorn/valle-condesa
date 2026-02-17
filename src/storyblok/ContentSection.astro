@@ -4,6 +4,7 @@ import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 
 const {blok} = Astro.props
 const renderedRichText = renderRichText(blok.description)
+console.log(blok.content)
 ---
 
 
@@ -16,13 +17,14 @@ const renderedRichText = renderRichText(blok.description)
           <Fragment set:html={renderedRichText} />
         </div>
       </div>
+
+      <!-- Features -->
       {blok.content && blok.content[0].features && 
       <div class="grid md:grid-cols-3 gap-12">
         {blok.content[0].features?.map((card : any) => {
         return (<StoryblokComponent blok={card}/>)
       })}
       </div>
-      
       }
     </div>
 </section>
