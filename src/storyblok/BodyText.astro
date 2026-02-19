@@ -1,0 +1,10 @@
+---
+import { renderRichText } from "@storyblok/astro"
+const {blok} = Astro.props
+const renderedText = blok.text ? renderRichText(blok.text) : ""
+---
+
+
+<div class="prose-slate prose prose-p:leading-normal md:prose-lg">
+  <Fragment set:html={renderedText}/>
+</div>

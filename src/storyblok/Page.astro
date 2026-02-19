@@ -3,7 +3,7 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const {blok} = Astro.props
 ---
 
-<main class="flex flex-col space-y-24 md:space-y-32 pb-20 md:pb-28">
+<main class="flex flex-col">
   {
     blok.body?.map((blok : any) => {
       return <StoryblokComponent blok={blok} />;

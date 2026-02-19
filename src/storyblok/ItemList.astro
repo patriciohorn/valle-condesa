@@ -1,0 +1,12 @@
+---
+const {blok} = Astro.props
+---
+
+<div>
+  <p class="mb-6">{blok.title}</p>
+  <ul class="flex flex-wrap gap-y-2">
+    {blok.items.map((item : any) => {
+      return <li class="border-l-2 border-l-accent w-1/2 px-3 py-1">{item.label}</li>
+    })}
+  </ul>
+</div>

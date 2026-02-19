@@ -1,23 +1,22 @@
 ---
 import { Image } from "astro:assets"
+import SectionWrapper from "../components/SectionWrapper.astro"
 
 const {blok} = Astro.props
 ---
 
-<section class="">
-  <div class="container max-w-352 px-5 mx-auto">
-    <!-- Image -->
+<SectionWrapper>
     <div class="rounded-sm overflow-hidden">
       <Image src={blok.imagen.filename} alt={blok.image_alt || 'Valle Condesa'} inferSize class="w-full h-full object-cover"/>
     </div>
     <!-- Caption -->
-     {blok.caption && 
+    {blok.caption && 
       <div class="mt-4 flex items-center gap-x-4">
-              <div class="border-l-2 inline-block text-accent h-3 lg:h-4"></div>
-              <figcaption class="text-sm text-neutral-600">
-                {blok.caption}
-              </figcaption>
-            </div>
+          <div class="border-l-2 inline-block text-accent h-3 lg:h-4"></div>
+            <figcaption class="text-sm text-neutral-600">
+              {blok.caption}
+            </figcaption>
+        </div>
+      </div>
     }
-  </div>
-</section>
+</SectionWrapper>

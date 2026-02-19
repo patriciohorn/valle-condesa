@@ -2,6 +2,7 @@
 import { renderRichText } from "@storyblok/astro"
 import SectionWrapper from "../components/SectionWrapper.astro"
 import Prose from "../components/Prose.astro"
+import HeadingTwo from "../components/HeadingTwo.astro"
 import { Image } from "astro:assets"
 
 const {blok} = Astro.props
@@ -12,14 +13,21 @@ const renderedContent = renderRichText(blok.text)
 <SectionWrapper>
 <div class="grid md:grid-cols-2 gap-x-20 gap-y-12">
   <!-- Content -->
-  <div class="">
-      <h2 class="mb-4 md:mb-6 text-3xl md:text-[2.5rem]">{blok.heading}</h2>
+  <div>
+    <HeadingTwo heading={blok.heading}/>
       <Prose>
         <Fragment set:html={renderedContent}/>
       </Prose>
+      <!-- List of items -->
+      <ul class="mt-6 md:mt-8 grid md:grid-cols-2 gap-6">
+        {blok.items?.map((item: any) => (
+          <li class="px-4 py-1 border-l-accent border-l-2">{item.label}</li>
+        ))}
+       
+      </ul>
   </div>
   <!-- Image -->
-   <div class="rounded-sm oveflow-hidden">
+   <div class="rounded-sm overflow-hidden">
     <Image src={blok.image.filename} alt={blok.image.alt} class="object-cover w-full h-full" width={1232} height={1292}/>
    </div>
 

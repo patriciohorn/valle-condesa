@@ -28,6 +28,11 @@ export default defineConfig({
         amenities: "storyblok/Amenities",
         amenity: "storyblok/Amenity",
         layout_1: "storyblok/Layout1",
+
+        section_heading: "storyblok/SectionHeading",
+        feature_section: "storyblok/FeatureSection",
+        body_text: "storyblok/BodyText",
+        item_list: "storyblok/ItemList",
       },
     }),
   ],

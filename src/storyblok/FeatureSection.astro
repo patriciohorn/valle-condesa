@@ -1,0 +1,38 @@
+---
+import SectionWrapper from "../components/SectionWrapper.astro"
+import { Image } from "astro:assets"
+import BodyText from "./BodyText.astro"
+import ItemList from "./ItemList.astro"
+const {blok} = Astro.props
+const contentOrder = blok.image_position === 'derecha' ? '' : 'order-2'
+
+// Map that helps Content lookup 
+const contentMap = {
+  body_text: BodyText, 
+  item_list: ItemList
+}
+---
+
+
+<SectionWrapper>
+  <div class="grid md:grid-cols-2 gap-x-20 gap-y-12">
+    <!-- Content -->
+    <div class=`${contentOrder}`>
+      <h3 class="mb-5 md:mb-6 text-[32px] md:text-[40px] leading-[1.1]">{blok.headline}</h3>
+      
+      {blok.content?.map((contentBlok : any) => {
+        // console.log('im a content block', )
+        const ContentComponent = contentMap[contentBlok.component]
+        console.log('CONTENT COMPONENT', ContentComponent)
+        return <ContentComponent blok={contentBlok}/>
+        
+      })}
+    </div>
+    
+    <!-- Image -->
+    <div class="rounded-lg overflow-hidden">
+      <Image src={blok.image.filename} alt={blok.image.alt} class="object-cover w-full h-full" width={1232} height={1292}/>
+    </div>
+  </div>
+  
+</SectionWrapper>
