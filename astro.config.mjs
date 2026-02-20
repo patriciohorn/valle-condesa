@@ -33,6 +33,8 @@ export default defineConfig({
         feature_section: "storyblok/FeatureSection",
         body_text: "storyblok/BodyText",
         item_list: "storyblok/ItemList",
+
+        feature_amenidades: "storyblok/FeaturesAmenidades",
       },
     }),
   ],

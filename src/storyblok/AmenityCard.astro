@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+const {card}= Astro.props
+---
+
+<div class="rounded-2xl p-2 flex flex-col gap-y-4 shadow-md border border-slate-200 bg-white">
+  <div class="aspect-video relative rounded-lg overflow-hidden">
+    <Image src={card.card_image.filename} alt={card.card_title} width={604} height={312} class="absolute inset-0 object-cover w-full h-full object-center"/>
+  </div>
+  <div class="px-4 pb-4">
+    <h4 class="text-lg font-medium mb-4 text-heading leading-[1.1]">{card.card_title}</h4>
+    <ul>
+      {card.amenidades?.map((amenidad : any) => (
+        <li class="text-slate-600 py-0.5">{amenidad.label}</li>
+      ))}
+    </ul>    
+  </div>
+</div>

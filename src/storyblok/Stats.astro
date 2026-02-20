@@ -4,11 +4,13 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const {blok} = Astro.props
 ---
 
-<section class="">
+<section class="py-20">
   <div class="max-w-7xl mx-auto px-5 md:px-0">
-    <div class="grid md:grid-cols-3 gap-12 md:gap-y-16">
-      {blok.stats?.map((stat: any) => {
-        return <StoryblokComponent blok={stat}/>
+    <div class="grid md:grid-cols-6 gap-8 md:gap-x-8 md:gap-y-12">
+      {blok.stats?.map((stat: any, index: number) => {
+        const totalCards = blok.stats.length; 
+        const isFirstOfLastRow = totalCards === 5 && index === 3
+        return <StoryblokComponent blok={stat} isFirstOfLastRow={isFirstOfLastRow}/>
       })}
     </div>
   </div>

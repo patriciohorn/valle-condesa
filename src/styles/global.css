@@ -3,5 +3,6 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --color-accent: #188539;
+  --color-accent: #65aaaa;
+  --color-heading: #001f1f;
 }

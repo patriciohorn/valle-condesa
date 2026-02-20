@@ -1,12 +1,14 @@
 ---
+import Pill from "./Pill.astro"
 const {blok} = Astro.props
+
 ---
 
-<div>
+<div class="mt-6">
   <p class="mb-6">{blok.title}</p>
-  <ul class="flex flex-wrap gap-y-2">
+  <ul class="flex flex-wrap gap-y-5 gap-x-2.5">
     {blok.items.map((item : any) => {
-      return <li class="border-l-2 border-l-accent w-1/2 px-3 py-1">{item.label}</li>
+      return <li class=""><Pill blok={item}/></li>
     })}
   </ul>
 </div>
