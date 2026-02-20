@@ -1,0 +1,15 @@
+---
+import SectionWrapper from "../components/SectionWrapper.astro"
+import StatItem from "../components/StatItem.astro"
+
+const {blok} = Astro.props
+---
+
+
+<SectionWrapper>
+   <ul class="py-12 md:py-20 grid md:grid-cols-4 gap-x-6 gap-y-8">
+      {blok.stats?.map((statItem: any) => (
+        <StatItem prefix={statItem.prefix} number={statItem.number} suffix={statItem.suffix} label={statItem.label}/>
+      ))}
+    </ul>
+</SectionWrapper>

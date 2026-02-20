@@ -35,6 +35,8 @@ export default defineConfig({
         item_list: "storyblok/ItemList",
 
         feature_amenidades: "storyblok/FeaturesAmenidades",
+        feature_uso_suelo: "storyblok/FeatureUsoSuelo",
+        callout_text: "storyblok/CalloutText",
       },
     }),
   ],

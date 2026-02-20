@@ -9,7 +9,7 @@ const {card}= Astro.props
     <Image src={card.card_image.filename} alt={card.card_title} width={604} height={312} class="absolute inset-0 object-cover w-full h-full object-center"/>
   </div>
   <div class="px-4 pb-4">
-    <h4 class="text-lg font-medium mb-4 text-heading leading-[1.1]">{card.card_title}</h4>
+    <h3 class="text-lg font-medium mb-4 text-heading leading-[1.1]">{card.card_title}</h3>
     <ul>
       {card.amenidades?.map((amenidad : any) => (
         <li class="text-slate-600 py-0.5">{amenidad.label}</li>

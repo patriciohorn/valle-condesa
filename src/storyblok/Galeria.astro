@@ -1,17 +1,17 @@
 ---
 import { Image } from "astro:assets";
+import SectionWrapper from "../components/SectionWrapper.astro";
 const {blok} = Astro.props
 ---
 
-<section class="">
-  <div class="max-w-7xl mx-auto">
+<SectionWrapper>
+  <div class="py-10 md:py-28">
     <div class="flex justify-between gap-x-8">
-      <div class="rounded-sm overflow-hidden">
+      <div class="rounded-lg shadow-sm overflow-hidden">
         <Image src={blok.imagen_1.filename} alt={blok.imagen_1_alt_text || "Parque Condesa"} inferSize/>
       </div>
-      <div class="rounded-sm overflow-hidden">
+      <div class="rounded-lg shadow-sm overflow-hidden">
         <Image src={blok.imagen_2.filename} alt={blok.imagen_2_alt_text || "Persona en patineta"} inferSize/>
-      </div>      
-    </div>
+      </div>  
   </div>
-</section>
+</SectionWrapper>

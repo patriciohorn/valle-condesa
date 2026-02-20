@@ -1,0 +1,13 @@
+---
+import SectionWrapper from "../components/SectionWrapper.astro"
+import CardUsoSuelo from "../components/CardUsoSuelo.astro"
+const {blok} = Astro.props
+---
+
+<SectionWrapper>
+  <ul class="grid md:grid-cols-3 gap-x-8 gap-y-12 pb-52">
+    {blok.cards.map((card : any ) => (
+      <CardUsoSuelo image={card.image} title={card.title} description={card.description} link={card.link} />
+    ))}
+  </ul>
+</SectionWrapper>
