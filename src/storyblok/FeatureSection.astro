@@ -33,9 +33,9 @@ const contentMap = {
     </div>
     
     <!-- Image -->
-    <div class={`relative md:min-h-144 rounded-lg overflow-hidden shadow-sm ${imageOrder}`}>
-      <Image src={blok.image.filename} alt={blok.image.alt} class="absolute inset-0 object-cover object-center w-full h-full" width={1232} height={1292}/>
+    <div class={`relative aspect-[4/3] md:aspect-auto md:min-h-144 rounded-lg overflow-hidden shadow-sm ${imageOrder}`}>
+      <Image src={blok.image.filename} alt={blok.image.alt} class="absolute inset-0 object-cover object-center w-full h-full" inferSize/>
     </div>
-  </div>
+  </div> 
   
 </SectionWrapper>
