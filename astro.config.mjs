@@ -37,6 +37,7 @@ export default defineConfig({
         feature_amenidades: "storyblok/FeaturesAmenidades",
         feature_uso_suelo: "storyblok/FeatureUsoSuelo",
         callout_text: "storyblok/CalloutText",
+        feature_fraccionamientos: "storyblok/FeatureFraccionamientos",
       },
     }),
   ],

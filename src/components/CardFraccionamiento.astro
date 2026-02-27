@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets"
+import {ExternalLink } from "@lucide/astro"
+const {image, title, description, link} = Astro.props
+---
+
+<li class="group rounded-2xl p-2 flex flex-col gap-y-4 shadow-sm  bg-white hover:bg-slate-50 hover:shadow-md transition-all duration-200 ease-in-out">
+  <a href={`${link.cached_url}`|| '/habitacional'} target="_blank" aria-label={`Conoce más sobre los ${title}`}>
+    <div class="relative aspect-4/3 rounded-lg overflow-hidden">
+      <Image src={image.filename} alt={`Valle Condesa ${title}`} class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-300 ease-in-out" width={604} height={312} />
+    </div>
+    <div class="px-4 pt-6 pb-4">
+     <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xl font-medium text-heading leading-[1.1]">{title}</h3>
+         <ExternalLink  size={20} class="h-5 w-5 text-accent translate-x-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200"/>
+      </div>
+        
+      <p class="text-base text-slate-600">{description}</p>
+    </div>
+  </a>
+</li>
