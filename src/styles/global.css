@@ -2,7 +2,33 @@
 
 @plugin '@tailwindcss/typography';
 
+@font-face {
+  font-family: "HelveticaNowDisplay";
+  src: url("/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNowDisplay";
+  src: url("/fonts/HelveticaNowDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNowDisplay";
+  src: url("/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --color-accent: #65aaaa;
+  --font-sans: "HelveticaNowDisplay", sans-serif;
+  --color-accent: #00818b;
+  --color-accent-100: #e6f2f3;
   --color-heading: #001f1f;
 }
