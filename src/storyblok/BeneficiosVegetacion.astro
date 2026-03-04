@@ -1,0 +1,14 @@
+---
+import IconCard from "../components/IconCard.astro"
+
+const {blok} = Astro.props
+---
+
+<div class="mt-6 md:mt-10">
+  <p class=" text-slate-600 text-sm mb-6">{blok.title}</p>
+  <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
+    {blok.cards?.map((card : any) => (
+      <IconCard image={card.icon.filename} label={card.label} />
+    ))}
+  </div>
+</div>

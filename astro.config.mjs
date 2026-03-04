@@ -38,6 +38,8 @@ export default defineConfig({
         feature_uso_suelo: "storyblok/FeatureUsoSuelo",
         callout_text: "storyblok/CalloutText",
         feature_fraccionamientos: "storyblok/FeatureFraccionamientos",
+        pilares_section: "storyblok/PilaresSection",
+        beneficios_vegetacion: "storyblok/BeneficiosVegetacion",
       },
     }),
   ],

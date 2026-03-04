@@ -3,6 +3,7 @@ import SectionWrapper from "../components/SectionWrapper.astro"
 import { Image } from "astro:assets"
 import BodyText from "./BodyText.astro"
 import ItemList from "./ItemList.astro"
+import BeneficiosVegetacion from "./BeneficiosVegetacion.astro"
 const {blok} = Astro.props
 
 const isImageRight = blok.image_position === 'derecha'
@@ -12,7 +13,8 @@ const imageOrder = isImageRight ? 'md:order-2' : 'md:order-1'
 // Map that helps Content lookup 
 const contentMap = {
   body_text: BodyText,  
-  item_list: ItemList
+  item_list: ItemList, 
+  beneficios_vegetacion: BeneficiosVegetacion
 }
 ---
 
