@@ -1,5 +1,6 @@
 Ubicado en el corazón del macroproyecto Valle Condesa, en Juárez, Nuevo León, el Gran Parque Condesa es un claro ejemplo de cómo los espacios verdes pueden transformar una ciudad. Este parque, uno de los más grandes de la zona, está rodeado de áreas residenciales, lo que lo convierte en un punto central para la comunidad.
 
+//Cards
 A través de su diseño, fomenta la vida activa y el deporte con amplias áreas recreativas y canchas, impulsa la sustentabilidad con su vegetación nativa y sistemas de reciclaje, y fortalece la comunidad al ser un espacio de convivencia y bienestar para todos.
 
 ## Mapa de Orientacion

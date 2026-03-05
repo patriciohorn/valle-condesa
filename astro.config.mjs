@@ -40,6 +40,7 @@ export default defineConfig({
         feature_fraccionamientos: "storyblok/FeatureFraccionamientos",
         pilares_section: "storyblok/PilaresSection",
         beneficios_vegetacion: "storyblok/BeneficiosVegetacion",
+        libro_section: "storyblok/LibroSection",
       },
     }),
   ],
