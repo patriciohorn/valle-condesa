@@ -13,10 +13,10 @@ const {blok, isFirstOfLastRow} = Astro.props
     }
     <div class="flex flex-col gap-y-2">
       <div class="flex items-baseline gap-x-2">
-        <p class=" text-6xl md:text-[80px]">{blok.number}</p>
-        <span class="md:text-5xl">{blok.prefix}</span>
+        <p class=" text-5xl md:text-6xl text-heading">{blok.number}</p>
+        <span class="text-3xl md:text-4xl text-heading">{blok.prefix}</span>
       </div>
-      <p class="text-lg md:text-xl">{blok.label}</p>
+      <p class="text-lg md:text-xl text-slate-600">{blok.label}</p>
     </div>
   </div>
   
