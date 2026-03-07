@@ -4,6 +4,7 @@ import { Image } from "astro:assets"
 import BodyText from "./BodyText.astro"
 import ItemList from "./ItemList.astro"
 import BeneficiosVegetacion from "./BeneficiosVegetacion.astro"
+import TarjetaDato from "./TarjetaDato.astro"
 const {blok} = Astro.props
 
 const isImageRight = blok.image_position === 'derecha'
@@ -14,17 +15,23 @@ const imageOrder = isImageRight ? 'md:order-2' : 'md:order-1'
 const contentMap = {
   body_text: BodyText,  
   item_list: ItemList, 
-  beneficios_vegetacion: BeneficiosVegetacion
+  beneficios_vegetacion: BeneficiosVegetacion,
+  tarjeta_dato: TarjetaDato
 }
+
+// const tarjetaDato = contentMap.tarjetas_dato
+// console.log(tarjetaDato)
 ---
 
 
 <SectionWrapper>
-  <div class={`py-16 md:py-24 grid items-center gap-x-16 gap-y-12 ${gridCols} first-of-type:md:pt-0`}>
-
+  <div class={` py-16 md:py-24 grid items-center gap-x-16 gap-y-12 ${gridCols} first-of-type:md:pt-0`}>
      <!-- Image -->
     <div class={`relative aspect-4/3 md:aspect-auto md:min-h-144 rounded-2xl overflow-hidden shadow-sm ${imageOrder}`}>
       <Image src={blok.image.filename} alt={blok.image.alt} class="absolute inset-0 object-cover object-center w-full h-full" inferSize/>
+      {blok.content.length > 0 && blok.content.tarjeta_dato && (
+        <TarjetaDato/>
+      )}
     </div>
     <!-- Content -->
     <div class=`${contentOrder}`>

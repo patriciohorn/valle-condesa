@@ -41,6 +41,8 @@ export default defineConfig({
         pilares_section: "storyblok/PilaresSection",
         beneficios_vegetacion: "storyblok/BeneficiosVegetacion",
         libro_section: "storyblok/LibroSection",
+        comunidad_section: "storyblok/ComunidadSection",
+        galeria_mosaico: "storyblok/GaleriaMosaico",
       },
     }),
   ],

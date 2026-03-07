@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets"
+const {blok} = Astro.props
+
+---
+
+<div class="md:w-2xl max-w-3xl bg-gray-300 md:rounded-tl-[160px] md:rounded-r-[200px]  md:rounded-bl-none md:-translate-x-26 md:translate-y-2 shadow-md">
+  <div class="grid gap-y-6 md:grid-cols-[2fr_1fr] p-6 md:p-10 gap-x-3 items-center justify-center">
+    <div class="flex gap-x-4">
+      <Image src={blok.icon.filename} alt="" class="w-6 h-6 md:w-8 md:h-8 " width={40} height={40}/>
+      <div class="flex flex-col gap-y-4">
+      
+         <p class="text-lg md:text-2xl uppercase font-bold">{blok.title}</p>
+          <p class="text-base md:text-lg text-gray-700">{blok.description}</p>
+      </div>
+    </div>
+    <div class="rounded-full overflow-hidden">
+      <div class="aspect-square">
+        <Image src={blok.image.filename} alt="" class="w-full h-full object-cover object-center " inferSize/>
+      </div>
+    </div>
+       
+  </div>
+</div>

@@ -30,5 +30,14 @@
   --font-sans: "HelveticaNowDisplay", sans-serif;
   --color-accent: #00818b;
   --color-accent-100: #e6f2f3;
+
+  --color-accent-200: #99cdd1;
+  --color-accent-300: #66b3b9;
+  --color-accent-400: #339aa2;
+  --color-accent-600: #00676f;
+  --color-accent-600: #004d53;
+  --color-accent-700: #003438;
+  --color-accent-800: #001a1c;
+  --color-accent-900: #000d0e;
   --color-heading: #001a1c;
 }
