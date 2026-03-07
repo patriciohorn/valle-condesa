@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Menu, X } from "@lucide/astro";
 
 import Logo from '../assets/logo-vc.svg'
 
@@ -14,13 +15,15 @@ const rightNavItems = [
   {label: 'Contacto', ref: '/contacto'}, 
 ]
 
+const allItems = [...leftNavItems, ...rightNavItems]
+
 const pathname = Astro.url.pathname
 ---
 
 
-<nav class="absolute top-0 left-0 w-full z-10 py-6 px-5 md:px-0">
+<nav class=" absolute top-0 left-0 w-full z-10 py-6 px-5 md:px-0">
    <div class="flex items-center max-w-7xl mx-auto text-white">
-      <!-- Left Side NavBar -->
+      <!-- Desktop Left Side NavBar -->
      <ul class="hidden lg:flex lg:justify-start lg:gap-x-8 lg:flex-1">
       {leftNavItems.map((item) => (
         <li>
@@ -30,10 +33,7 @@ const pathname = Astro.url.pathname
       ))}
      
      </ul>
-
-
-    
-   
+       
      <!-- Logo -->
      <div class="shrink-0">
       <a href="/">
@@ -41,22 +41,28 @@ const pathname = Astro.url.pathname
       </a>
      </div>
 
-      <!-- Hamburger Button (mobile only) -->
+      <!-- Hamburger Button (Mobile) -->
     <button
       id="mobile-menu-btn"
-      class="lg:hidden ml-auto p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
+      class="lg:hidden ml-auto p-3 rounded-md hover:bg-white/10 transition-colors duration-200"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
       <!-- Menu Icon -->
-      <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
-      </svg>
+      <Menu size={20} class="w-6 h-6"/>
       <!-- X Icon -->
-      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
-        <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
-      </svg>
+      <X size={20} class="hidden w-6 h-6"/>
     </button>
+
+    <!-- Mobile Menu -->
+     <div class="bg-white h-screen w-full absolute top-0 left-0">
+      <ul>
+        {allItems.map(({label, ref}) => (
+          <li class="text-black"><a href={ref}>{label}</a></li>
+        ))}
+      </ul>
+     </div>
+
      <!-- Right Side NavBar -->
      <ul class="hidden lg:flex lg:justify-end lg:gap-x-8 lg:flex-1">
        {rightNavItems.map((item) => (
@@ -65,7 +71,5 @@ const pathname = Astro.url.pathname
         </li>       
       ))}
      </ul>
-
-
    </div>
 </nav>

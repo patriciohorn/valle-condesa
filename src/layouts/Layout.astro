@@ -2,6 +2,8 @@
 import Footer from "../components/Footer.astro";
 import NavBar from "../components/NavBar.astro";
 import "../styles/global.css";
+import Navbar from "../components/Navbar";
+
 
 ---
 
@@ -16,7 +18,8 @@ import "../styles/global.css";
 		<title>Valle Condesa</title>
 	</head>
 	<body>  
-    <NavBar/>
+    <Navbar client:load/>
+    <!-- <NavBar/> -->
 		<slot />
     <Footer/>
 	</body>
